@@ -1,19 +1,33 @@
-package hello;
+package tourism.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
 import java.util.Date;
 
+@Entity
+@Table(name="users")
 public class User {
 
+@Id
+@Column(name="user_id")
 private Integer id;
+
+@Column(name="first_name")
 private String name;
+
+@Column(name="birthday")
 private Date birthdate;
+
+@Column(name="active")
 private Boolean activeMark;
 
-public Integer getId() {
+public Integer getUserId() {
 return id;
 }
 
-public void setId(Integer id) {
+public void setUserId(Integer id) {
 this.id=id;
 }
 

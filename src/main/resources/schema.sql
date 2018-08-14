@@ -1,28 +1,39 @@
-create schema if not exists cms;
+CREATE SCHEMA IF NOT EXISTS myschema;
 
-drop table if exists cms.users;
+DROP TABLE IF EXISTS myschema.users, myschema.orders, myschema.tours;
 
-create table cms.users (
-   user_id integer,
-   user_name varchar2(100),
-   user_birthday date,
-   user_active boolean
+CREATE TABLE IF NOT EXISTS myschema.users (
+   user_id integer PRIMARY KEY,
+   first_name varchar(100),
+   last_name varchar(100),
+   email varchar(100),
+   password varchar(100),
+   active boolean,
+   birthday date
+);
+
+CREATE TABLE IF NOT EXISTS myschema.tours (
+   tour_id integer PRIMARY KEY,
+   name varchar(100),
+   description varchar(100),
+   location varchar(100),
+   start_date date,
+   end_date date,
+   count_limit integer
+);
+
+CREATE TABLE IF NOT EXISTS myschema.orders (
+   order_id integer PRIMARY KEY,
+   user_id integer REFERENCES myschema.users (user_id),
+   tour_id integer REFERENCES myschema.tours (tour_id),
+   confirmed boolean,
+   time_key date
 );
 
 
-CREATE SEQUENCE	 IF NOT EXISTS userIdSequence START WITH 10;
 
-insert into cms.users (user_id, user_name, user_birthday, user_active)
-values (14, 'Mark', '1998-02-05', true);
+INSERT INTO myschema.users VALUES
+    (14, 'Mark', 'Zuckerberg', 'mark@gmail.com', 'qwertl', true, '1998-02-05');
 
-insert into cms.users (user_id, user_name, user_birthday, user_active)
-values (22, 'Роман', '1996-12-02', false);
-
-insert into cms.users (user_id, user_name, user_birthday, user_active)
-values (25, 'Алексей', '1994-11-05', true);
-
-insert into cms.users (user_id, user_name, user_birthday, user_active)
-values (17, 'July', '2001-11-10', false);
-
-insert into cms.users (user_id, user_name, user_birthday, user_active)
-values (25, 'Арсений', '1992-12-05', true);
+INSERT INTO myschema.tours VALUES
+    (12, 'Bali', 'Nice trip', 'Bali again', '2018-09-09', '2018-09-18', 12);

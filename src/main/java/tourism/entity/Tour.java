@@ -8,75 +8,69 @@ import java.util.Date;
 
 public class Tour {
 
-private Integer tour_id;
+    private Integer tour_id;
+    private String name;
+    private String description;
+    private String location;
+    private Date start_date;
+    private Date end_date;
+    private Integer count_limit;
 
-private String name;
+    public Integer getTourId() {
+        return tour_id;
+    }
 
-private String description;
+    public void setTourId(Integer tour_id) {
+        this.tour_id=tour_id;
+    }
 
-private String location;
+    public String getName() {
+        return name;
+    }
 
-private Date start_date;
+    public void setName(String name) {
+        this.name=name;
+    }
 
-private Date end_date;
+    public String getDescription() {
+        return description;
+    }
 
-private Integer count_limit;
+    public void setDescription(String description) {
+        this.description=description;
+    }
 
-public Integer getTourId() {
-return tour_id;
-}
+    public String getLocation() {
+        return location;
+    }
 
-public void setTourId(Integer tour_id) {
-this.tour_id=tour_id;
-}
+    public void setLocation(String location) {
+        this.location=location;
+    }
 
-public String getName() {
-return name;
-}
+    public Date getStartDate() {
+        return start_date;
+    }
 
-public void setName(String name) {
-this.name=name;
-}
+    public void setStartDate(Date start_date) {
+        this.start_date=start_date;
+    }
 
-public String getDescription() {
-return description;
-}
+    public Date getEndDate() {
+        return end_date;
+    }
 
-public void setDescription(String description) {
-this.description=description;
-}
+    public void setEndDate(Date end_date) {
+        this.end_date=end_date;
+    }
 
-public String getLocation() {
-return location;
-}
+    public Integer getCount() {
+        return count_limit;
+    }
 
-public void setLocation(String location) {
-this.location=location;
-}
-
-public Date getStartDate() {
-return start_date;
-}
-
-public void setStartDate(Date start_date) {
-this.start_date=start_date;
-}
-
-public Date getEndDate() {
-return end_date;
-}
-
-public void setEndDate(Date end_date) {
-this.end_date=end_date;
-}
-
-public Integer getCount() {
-return count_limit;
-}
-
-public void setCount(Integer count_limit) {
-this.count_limit=count_limit;
-}
+    public void setCount(Integer count_limit) {
+        this.count_limit=count_limit;
+    }
 
 }
 

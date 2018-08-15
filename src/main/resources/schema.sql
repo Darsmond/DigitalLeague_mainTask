@@ -33,7 +33,12 @@ CREATE TABLE IF NOT EXISTS myschema.orders (
 
 
 INSERT INTO myschema.users VALUES
-    (14, 'Mark', 'Zuckerberg', 'mark@gmail.com', 'qwertl', true, '1998-02-05');
+    (18, 'Mark', 'Zuckerberg', 'mark@gmail.com', 'qwertl', true, '1998-02-05');
 
 INSERT INTO myschema.tours VALUES
     (12, 'Bali', 'Nice trip', 'Bali again', '2018-09-09', '2018-09-18', 12);
+
+INSERT INTO myschema.orders VALUES
+    (1, 18, 12, true, '2018-05-07');
+
+

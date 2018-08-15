@@ -14,7 +14,7 @@ public class GenericDao<T extends Serializable> {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    String SQLSelectAll = "select * from myschema.users";
+    String SQLSelectAll = "select users.* from (myschema.users left join myschema.orders on users.user_id = orders.user_id) where confirmed = true";
 
     public List<T> selectAll(BeanPropertyRowMapper mapper) {
         return jdbcTemplate.query(SQLSelectAll, mapper);

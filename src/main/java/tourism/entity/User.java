@@ -10,50 +10,47 @@ import java.util.Date;
 @Table(name="users")
 public class User {
 
-@Id
-@Column(name="user_id")
-private Integer id;
+    @Id
+    @Column(name="user_id")
+    private Integer id;
+    @Column(name="first_name")
+    private String name;
+    @Column(name="birthday")
+    private Date birthdate;
+    @Column(name="active")
+    private Boolean activeMark;
 
-@Column(name="first_name")
-private String name;
+    public Integer getUserId() {
+        return id;
+    }
 
-@Column(name="birthday")
-private Date birthdate;
+    public void setUserId(Integer id) {
+        this.id=id;
+    }
 
-@Column(name="active")
-private Boolean activeMark;
+    public String getName() {
+        return name;
+    }
 
-public Integer getUserId() {
-return id;
-}
+    public void setName(String name) {
+        this.name=name;
+    }
 
-public void setUserId(Integer id) {
-this.id=id;
-}
+    public Date getDate() {
+        return birthdate;
+    }
 
-public String getName() {
-return name;
-}
+    public void setDate(Date date) {
+        this.birthdate=date;
+    }
 
-public void setName(String name) {
-this.name=name;
-}
+    public Boolean getMark() {
+        return activeMark;
+    }
 
-public Date getDate() {
-return birthdate;
-}
-
-public void setDate(Date date) {
-this.birthdate=date;
-}
-
-public Boolean getMark() {
-return activeMark;
-}
-
-public void setMark(Boolean mark) {
-this.activeMark=mark;
-}
+    public void setMark(Boolean mark) {
+        this.activeMark=mark;
+    }
 
 }
 

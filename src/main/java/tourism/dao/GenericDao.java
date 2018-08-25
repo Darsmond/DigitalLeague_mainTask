@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import java.io.Serializable;
 
-import java.util.List;
+import java.util.*;
 
 @Repository
 public class GenericDao<T extends Serializable> {
@@ -14,7 +14,7 @@ public class GenericDao<T extends Serializable> {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    String SQLSelectAll = "select users.* from (myschema.users left join myschema.orders on users.user_id = orders.user_id) where confirmed = true";
+    String SQLSelectAll = "select tours.* from ((myschema.users inner join myschema.orders on users.user_id = orders.user_id) left join myschema.tours on orders.tour_id = tours.tour_id) where users.user_id = 18";
 
     public List<T> selectAll(BeanPropertyRowMapper mapper) {
         return jdbcTemplate.query(SQLSelectAll, mapper);

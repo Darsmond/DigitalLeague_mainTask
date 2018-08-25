@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class Tour {
 
-    private Integer tour_id;
+    private Integer tourId;
     private String name;
     private String description;
     private String location;
@@ -17,11 +17,11 @@ public class Tour {
     private Integer count_limit;
 
     public Integer getTourId() {
-        return tour_id;
+        return tourId;
     }
 
-    public void setTourId(Integer tour_id) {
-        this.tour_id=tour_id;
+    public void setTourId(Integer tourId) {
+        this.tourId=tourId;
     }
 
     public String getName() {

@@ -12,7 +12,7 @@ public class UserRowMapper extends BeanPropertyRowMapper {
     public User mapRow(ResultSet rs, int rowNum) throws SQLException {
         User user = new User();
         user.setUserId(rs.getInt("user_id"));
-        user.setName(rs.getString("first_name"));
+        user.setFirstName(rs.getString("first_name"));
         user.setDate(rs.getDate("birthday"));
         user.setMark(rs.getBoolean("active"));
         return user;

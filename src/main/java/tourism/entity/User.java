@@ -12,31 +12,31 @@ public class User {
 
     @Id
     @Column(name="user_id")
-    private Integer id;
+    private Integer userId;
     @Column(name="first_name")
-    private String name;
+    private String firstName;
     @Column(name="birthday")
     private Date birthdate;
     @Column(name="active")
     private Boolean activeMark;
 
     public Integer getUserId() {
-        return id;
+        return userId;
     }
 
     public void setUserId(Integer id) {
-        this.id=id;
+        this.userId=id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name=name;
+    public void setFirstName(String firstName) {
+        this.firstName=firstName;
     }
 
-    public Date getDate() {
+    public Date getBirthdate() {
         return birthdate;
     }
 
@@ -44,7 +44,7 @@ public class User {
         this.birthdate=date;
     }
 
-    public Boolean getMark() {
+    public Boolean getActiveMark() {
         return activeMark;
     }
 
